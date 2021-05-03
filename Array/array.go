@@ -27,11 +27,21 @@ func SumExample(numbers []int) int {
 
 
 func SumAll(numbersToSum ...[]int) []int{
-       sums := []int
-
+    var sums []int
 
    for  _, numbers := range numbersToSum{
-	   sums[i] = append(sums, SumExample(numbers))
+	   sums = append(sums, SumExample(numbers))
    }
    return sums
+}
+
+
+func SumAllTails(numbersToSum ...[]int) []int {
+	var sums []int
+
+	for _, numbers := range numbersToSum{
+		tail := numbers[1:]
+		sums = append(sums, SumExample(tail))
+	}
+	return sums
 }
