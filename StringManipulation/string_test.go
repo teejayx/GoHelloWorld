@@ -34,6 +34,22 @@ func TestStringManipulation (t *testing.T) {
 
 } )
 
+
+ t.Run("`Reverse String",  func(t *testing.T){
+      word := "listen"
+	  want := "netsil"
+	  got := ReversString(word)
+       assertStringError(t, got, want)
+
+} )
+
+t.Run("Reserve String two Pointers", func(t *testing.T){
+	  word := "listen"
+	  want := "netsil"
+	  got := ReversStringTwoPointer(word)
+       assertStringError(t, got, want)
+})
+
 }
 
 
@@ -44,5 +60,13 @@ func assertError(t testing.TB, got, want bool) {
 
 	if got != want {
 		t.Errorf("got %t want %t", got, want)
+	}
+}
+
+func assertStringError(t testing.TB, got, want string) {
+	t.Helper()
+
+	if got != want {
+		t.Errorf("got %q want %q", got, want)
 	}
 }

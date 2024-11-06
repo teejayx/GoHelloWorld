@@ -5,13 +5,6 @@ import (
 	"strings"
 )
 
-// clean the string for palindrome
-// reverse the string and compare the last and first letter and continue ot move
-//
-//
-//
-
-
 
 func Panlindrome(text string) bool  {
 	
@@ -81,4 +74,30 @@ func AnagramCountFreq (text1, text2 string) bool {
 
 	 return true
 
+}
+//O(n²) adding a character to newWord involves copying all the existing characters in newWord to create a new string. Thus, the cost of concatenating grows as newWord becomes longer.
+func ReversString(word string) string {
+  newWord := ""
+
+  for i := len(word) - 1; i >= 0 ; i-- {
+	newWord += string(word[i])
+  }
+  return newWord
+
+}
+
+//O(n)
+func ReversStringTwoPointer(word string) string {
+	s := []byte(word)
+	left := 0
+	right := len(s)- 1
+
+	for left < right {
+		temp := s[left]
+		s[left] = s[right]
+		s[right] = temp
+		left++
+		right--
+	}
+	return string(s)
 }
