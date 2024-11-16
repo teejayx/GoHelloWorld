@@ -14,3 +14,12 @@ func TestSelectionSort(t *testing.T){
 		t.Errorf("got %v want %v", got, want)
 	}
 }
+
+func TestBinarySearch(t *testing.T){
+	got := BinarySearch([]int{1,2,3,4,5,6,7}, 5)
+	want := true
+
+	if got != want{
+		t.Errorf("got %v want %v", got, want)
+	}
+}

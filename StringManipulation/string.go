@@ -58,7 +58,6 @@ func AnagramCountFreq (text1, text2 string) bool {
        
 		}
 
-
 	   for _, char := range text2 {
 		map2[char]++
        
